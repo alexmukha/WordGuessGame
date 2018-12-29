@@ -51,3 +51,49 @@ padding: 0;
 .spacer {
     /* margin: auto; */
 }
+
+.Ferrari {
+    background-image: url("../../assets/images/Ferrari.png");
+    height: 450px;
+    width: 800px;
+}
+
+.Tesla {
+    background-image: url("../../assets/images/TeslaS.png");
+    height: 450px;
+    width: 800px;
+}
+
+.Jaguar {
+    background-image: url("../../assets/images/Jaguar.png");
+    height: 450px;
+    width: 800px;
+}
+
+.Lamborghini {
+    background-image: url("../../assets/images/Lamborghini.png");
+    height: 450px;
+    width: 800px;
+}
+
+.Lamborghini {
+    background-image: url("../../assets/images/Lamborghini.png");
+    height: 450px;
+    width: 800px;
+}
+
+.Lotus {
+    background-image: url("../../assets/images/WhiteLotus.jpg");
+    height: 450px;
+    width: 800px;
+}
+
+.Maserati {
+    background-image: url("../../assets/images/BlackMaserati.png");
+    height: 450px;
+    width: 800px;
+}
+
+
+
+/* .ss ["","","","","Maserati","Mercedes","Bentley","Bugatti","Lexus"]; */
