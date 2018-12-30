@@ -1,8 +1,11 @@
 
-var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus"];
+var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
 for (var i = 0; i < cars.length; i++) {
 // var randomcar = Math.floor(Math.random()) + 1;
 }
+var valid = "Keep going";
+var invalid = "Try again";
+
 
 var randomcar = cars[Math.floor(Math.random()*cars.length)];
 console.log(randomcar);
@@ -17,70 +20,17 @@ console.log(word);
 var letNums = word.length;
 console.log(letNums);
 
-var showLetters = document.getElementById("letterBoxes");
-// var letterBlock = 
-for (var c = 0; c < word.length; c++) {
-    // console.log(word.length);
-    // showLetters.classList.add("letter")* word.length;
-    var box = [];
-    word.forEach(function(word){
 
-      box.push(word)
-    //   document.getElementById("letterBoxes").innerHTML = '<div class="letter">' + letNums +' letter word</div>';
-    });
-// showLetters.classList.add(word);
-}
-// var cars, text, fLen, i; // 
 var word, text, letNums, i;
-// cars = ["Banana", "Orange", "Apple", "Mango"]; //word
-// fLen = cars.length; // letNums
-
 text = '';
-// for (i = 0; i < fLen; i++) { // letNums
 for (i = 0; i < letNums; i++) {
-  text += '<div class="letter"></div>';
+  text += '<div class="letter"> - </div>';
 }
 text += "";
 document.getElementById("letterBoxes").innerHTML = text;
-// var box = [];
-// for (var i=0; i<word.length; i++) {
-//   box.push(word[i])
-//   console.log("Box" + word[i]);
-//   document.getElementById("letterBoxes").innerHTML = '<div class="letter">' + word[i] +'</div>';
-// //   console.log(showLetters);
-// }
 
 
 
-
-// var disp = document.getElementById("object")
-// disp.innerHTML.append(randomcar) = "<ol><li>html data</li></ol>";
-// var d = document.createElement("div");
-// d.innerHTML = "text";
-// show.appendChild(d);
-// show.className += "new" + newClassName;
-// var imgsrc = document.createElement("img");
-// show.classList.add(randomcar);
-// show.appendChild("div");
-// show.appendChild(imgsrc);
-
-// function imgsrc() {
-//     var show = document.getElementById("object");
-//     show.className.add(randomcar);
-//   }
-//   var div = document.getElementById("object");
-//   div.className += " otherclass";
-// myFunction();
-// var tttt = document.getElementById("object");
-// console.log(tttt);
-
-// function show() {
-//     var pic = document.createElement("div");
-//     var textnode = document.createTextNode("Water");
-//     pic.appendChild(textnode);
-//     document.getElementById("object").appendChild(pic);
-//   }
-// imgsrc();
 
 
 var car = ["f","e","r","r","a","r","i"];  
@@ -92,9 +42,11 @@ for (var i = 0; i < car.length; i++) {
 // console.log(word.join(''));
 
 
-function guessed() {
+function alphaKey() {
     console.log("RESULT ");
 }
+
+
 
 
 
@@ -105,11 +57,11 @@ document.onkeydown = function(event) {
     // console.log(userInput);
     if (userInput == userInput.replace(/[^a-z]/g)) {
         // console.log("Correct key " + userInput);
-        guessed();
+        alphaKey();
     } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
         var userInput = "Caps ON " + userInput;
         // console.log(userInput);
-        guessed();
+        alphaKey();
     } else if (userInput == userInput.replace(/[^0-9]/g)) {
         var userInput = userInput + " is a Number";
         console.log(userInput);
