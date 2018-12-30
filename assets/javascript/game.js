@@ -6,33 +6,48 @@ for (var i = 0; i < cars.length; i++) {
 
 var randomcar = cars[Math.floor(Math.random()*cars.length)];
 console.log(randomcar);
-// var show = document.getElementById("object");
-// show.classList.add("mystyle");
-// $("#display").append(fridgeMagnet);
 
-// function myFunction() {
-    // var element = document.getElementById("object");
-    // element.classList.add("mystyle");
+// var disp = document.getElementById("object")
+// disp.innerHTML.append(randomcar) = "<ol><li>html data</li></ol>";
+
+var show = document.getElementById("object");
+// var d = document.createElement("div");
+// d.innerHTML = "text";
+// show.appendChild(d);
+// show.className += "new" + newClassName;
+show.classList.add(randomcar);
+// var imgsrc = document.createElement("img");
+// show.classList.add(randomcar);
+// show.appendChild("div");
+// show.appendChild(imgsrc);
+
+// function imgsrc() {
+//     var show = document.getElementById("object");
+//     show.className.add(randomcar);
 //   }
 //   var div = document.getElementById("object");
 //   div.className += " otherclass";
 // myFunction();
+// var tttt = document.getElementById("object");
+// console.log(tttt);
 
-function show() {
-    var pic = document.createElement("div");
-    var textnode = document.createTextNode("Water");
-    pic.appendChild(textnode);
-    document.getElementById("object").appendChild(pic);
-  }
-show();
+// function show() {
+//     var pic = document.createElement("div");
+//     var textnode = document.createTextNode("Water");
+//     pic.appendChild(textnode);
+//     document.getElementById("object").appendChild(pic);
+//   }
+// imgsrc();
 
 
 var car = ["f","e","r","r","a","r","i"];  
 for (var i = 0; i < car.length; i++) {
 }
 
-var word = (cars[1].split(''));
-// console.log(word);
+var word = (randomcar.split(''));
+console.log(word);
+var show = document.getElementById("word");
+
 
 // var test =  car.join('');
 // console.log(word.join(''));

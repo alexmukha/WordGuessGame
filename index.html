@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/bgstyle.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <script src="assets/javascript/game.js"></script>
+
 </head>
 
 <body><div class="body">
@@ -16,8 +16,8 @@
         <div class="title">
             Guess what kind of car  
         </div>
-        <div class="main">
-                What car is this?<BR>
+        <div class="main" id="word">
+                What car is this?<br>
                     <div class="letter">
                         __
                     </div>
@@ -44,8 +44,10 @@
         </div>
         <div class="main">
         <div class="spacer">&nbsp;</div>
-        <div id="object"></div>
-            <!-- <img src="assets/images/Koenigsegg-1.png" alt="What is this car?"> -->
+        <div class="img">
+            <img id="object" alt="Guesss this car" height="450px" width="800px">
+        </div>
+            <!-- <img class="object" alt="What is this car?"> -->
         <div class="spacer">&nbsp;</div>
         
         </div>
@@ -53,6 +55,8 @@
 
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="assets/javascript/game.js"></script>
 
 </body>
 

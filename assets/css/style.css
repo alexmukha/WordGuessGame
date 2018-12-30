@@ -52,48 +52,99 @@ padding: 0;
     /* margin: auto; */
 }
 
+.img {
+    width: 450px;
+    height: 450px;
+}
+
 .Ferrari {
-    background-image: url("../../assets/images/Ferrari.png");
+    content: url("../../assets/images/Ferrari.png");
+    /* background-image: url("../../assets/images/Ferrari.png"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Tesla {
-    background-image: url("../../assets/images/TeslaS.png");
+    content: url("../../assets/images/TeslaS.png");
+    /* background-image: url("../../assets/images/TeslaS.png"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Jaguar {
-    background-image: url("../../assets/images/Jaguar.png");
+    content: url("../../assets/images/Jaguar.png");
+    /* background-image: url("../../assets/images/Jaguar.png"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Lamborghini {
-    background-image: url("../../assets/images/Lamborghini.png");
+    content: url("../../assets/images/Lamborghini.png");
+    /* background-image: url("../../assets/images/Lamborghini.png"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Lamborghini {
-    background-image: url("../../assets/images/Lamborghini.png");
+    content: url("../../assets/images/Lamborghini.png");
+    /* background-image: url("../../assets/images/Lamborghini.png"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Lotus {
-    background-image: url("../../assets/images/WhiteLotus.jpg");
+    content: url("../../assets/images/WhiteLotus.jpg");
+    /* background-image: url("../../assets/images/WhiteLotus.jpg"); */
+    background-repeat: no-repeat;
     height: 450px;
     width: 800px;
 }
 
 .Maserati {
-    background-image: url("../../assets/images/BlackMaserati.png");
+    content: url("../../assets/images/BlackMaserati.png");
+    /* background-image: url("../../assets/images/BlackMaserati.png"); */
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 800px;
+}
+
+.Mercedes {
+    content: url("../../assets/images/BlackMercedes.png");
+    /* background-image: url("../../assets/images/BlackMercedes.png"); */
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 800px;
+}
+
+.Bentley {
+    content: url("../../assets/images/BlueBentley.png");
+    /* background-image: url("../../assets/images/BlueBentley.png"); */
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 800px;
+}
+
+.Bugatti {
+    content: url("../../assets/images/BlueBugatti.png");
+    /* background-image: url("../../assets/images/BlueBugatti.png"); */
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 800px;
+}
+
+.Lexus {
+    content: url("../../assets/images/BlueLexus.png");
+    /* background-image: url("../../assets/images/BlueLexus.png"); */
+    background-repeat: no-repeat;
+    /* background-size: 800px 450px; */
+    /* size: 800px 450px; */
     height: 450px;
     width: 800px;
 }
 
 
-
-/* .ss ["","","","","Maserati","Mercedes","Bentley","Bugatti","Lexus"]; */
