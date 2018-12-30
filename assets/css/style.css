@@ -28,7 +28,7 @@ padding: 0;
     margin: 0 auto;
     /* padding: 20px 0; */
     text-align: center;
-    background-color: rgba(0, 0, 255, 0.3);
+    /* background-color: rgba(0, 0, 255, 0.3); */
 
 }
 
@@ -38,9 +38,15 @@ padding: 0;
 
 .main {
     font-size: 20px;
-    background-color: rgba(255, 0, 255, 0.3);
+    /* background-color: rgba(255, 0, 255, 0.3); */
     border: 1px blue solid;
 
+}
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
 }
 
 .letter {
@@ -56,7 +62,7 @@ padding: 0;
 }
 
 .spacer {
-    /* margin: auto; */
+    margin: auto;
 }
 
 .imgBox {
@@ -74,6 +80,7 @@ padding: 0;
     background-repeat: no-repeat;
     /* background-size: 250px 400px; */
     background-size: 100% 100%;
+   
 }
 
 .Ferrari {

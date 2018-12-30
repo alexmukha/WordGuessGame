@@ -6,9 +6,13 @@ for (var i = 0; i < cars.length; i++) {
 var valid = "Keep going";
 var invalid = "Try again";
 
+var wins = 0;
+var losses = 0;
+var guessesRemaining = 9;
+
 
 var randomcar = cars[Math.floor(Math.random()*cars.length)];
-console.log(randomcar);
+// console.log(randomcar);
 
 var showImg = document.getElementById("object");
 showImg.classList.add(randomcar);
@@ -16,30 +20,28 @@ showImg.classList.add(randomcar);
 
 var word = (randomcar.split(''));
 console.log(word);
+
 // var show = document.getElementById("word");
 var letNums = word.length;
-console.log(letNums);
-
+// console.log(letNums);
 
 var word, text, letNums, i;
 text = '';
 for (i = 0; i < letNums; i++) {
-  text += '<div class="letter"> - </div>';
+  text += '<div class="letter">' + word[i] + '</div>';
 }
 text += "";
 document.getElementById("letterBoxes").innerHTML = text;
 
 
-
-
-
-var car = ["f","e","r","r","a","r","i"];  
-for (var i = 0; i < car.length; i++) {
+document.onkeydown = function(eventKey) {
+    var keyInput = eventKey.key.toString(); {
+        console.log(keyInput); 
+        if (Array.word === keyInput) {
+            console.log("You pressed");
+        }
+    }
 }
-
-
-// var test =  car.join('');
-// console.log(word.join(''));
 
 
 function alphaKey() {
@@ -58,6 +60,9 @@ document.onkeydown = function(event) {
     if (userInput == userInput.replace(/[^a-z]/g)) {
         // console.log("Correct key " + userInput);
         alphaKey();
+        // if (userInput === word) {
+            // console.log(word)
+        // }
     } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
         var userInput = "Caps ON " + userInput;
         // console.log(userInput);
@@ -80,10 +85,11 @@ document.onkeydown = function(event) {
     }
     }
     
-    if(userInput == car[""]) {
-        // console.log("Lets go");
-    } else {
-        // console.log("Not right key");
-    }
+
+
+
+
+
+
    
 }
