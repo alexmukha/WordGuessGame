@@ -95,43 +95,43 @@ padding: 0;
 }
 
 .Ferrari {
-    background-image: url("../../assets/images/YellowFerrari.png");
-    /* content: url("../../assets/images/BlueFerrari.png"); */
+    /* background-image: url("../../assets/images/YellowFerrari.png"); */
+    content: url("../../assets/images/BlueFerrari.png");
 }
 
 .Tesla {
-    background-image: url("../../assets/images/TeslaS.png");
-    /* content: url("../../assets/images/TeslaS.png"); */
+    /* background-image: url("../../assets/images/TeslaS.png"); */
+    content: url("../../assets/images/TeslaS.png");
 }
 
 .Jaguar {
-    background-image: url("../../assets/images/Jaguar.png");
-    /* content: url("../../assets/images/Jaguar.png"); */
+    /* background-image: url("../../assets/images/Jaguar.png"); */
+    content: url("../../assets/images/Jaguar.png");
 }
 
 .Lamborghini {
-    background-image: url("../../assets/images/Lamborghini.png");
-    /* content: url("../../assets/images/Lamborghini.png"); */
+    /* background-image: url("../../assets/images/Lamborghini.png"); */
+    content: url("../../assets/images/Lamborghini.png");
 }
 
 .Lotus {
-    background-image: url("../../assets/images/BlackLotus.png");
-    /* content: url("../../assets/images/BlackLotus.png"); */
+    /* background-image: url("../../assets/images/BlackLotus.png"); */
+    content: url("../../assets/images/BlackLotus.png");
 }
 
 .Maserati {
-    background-image: url("../../assets/images/WhiteMaserati.png");
-    /* content: url("../../assets/images/WhiteMaserati.png"); */
+    /* background-image: url("../../assets/images/WhiteMaserati.png"); */
+    content: url("../../assets/images/WhiteMaserati.png");
 }
 
 .MercedesBenz {
-    background-image: url("../../assets/images/BlackMercedes.png");
-    /* content: url("../../assets/images/BlackMercedes.png"); */
+    /* background-image: url("../../assets/images/BlackMercedes.png"); */
+    content: url("../../assets/images/BlackMercedes.png");
 }
 
 .Bentley {
-    background-image: url("../../assets/images/BlueBentley.png");
-    /* content: url("../../assets/images/BlueBentley.png"); */
+    /* background-image: url("../../assets/images/BlueBentley.png"); */
+    content: url("../../assets/images/BlueBentley.png");
 }
 
 .Bugatti {

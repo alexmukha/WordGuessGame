@@ -36,7 +36,6 @@ space = wordLow.length;
 
 console.log(randomcarLow);
 console.log(wordLow);
-console.log(space);
 // var word, space, i; 
 for (var i = 0; i < space; i++) {
     spaceOrLetter.push("_");
@@ -44,8 +43,10 @@ document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spac
 // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
 }
 
-var showImg = document.getElementById("object");
-showImg.classList.add(randomcar);
+// var showImg = document.getElementById("object");
+// showImg.classList.add(pickCar);
+
+var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "'></div>";
 
 }
 
@@ -186,4 +187,4 @@ document.onkeydown = function(event) {
     complete();
 }
 
-
+reset();
