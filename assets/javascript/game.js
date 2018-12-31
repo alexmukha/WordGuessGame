@@ -10,7 +10,7 @@ var invalid = "Try again";
 var word = [];
 var randomcar = "";
 var space = 0;
-var spaceLetter = [];
+var spaceOrLetter = [];
 var wrongGuess = [];
 
 var allGuesses = 9;
@@ -21,18 +21,13 @@ var losses = 0;
 
 function Play() {
 randomcar = cars[Math.floor(Math.random()*cars.length)];
-// console.log(randomcar);
 word = (randomcar.split(''));
-
-// var show = document.getElementById("word");
 space = word.length;
 var word, space, i;
-// text = '';
 
 for (var i = 0; i < space; i++) {
-    spaceLetter.push(word[i]);
-
-document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+    spaceOrLetter.push(" ");
+document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
 }
 
 var showImg = document.getElementById("object");
@@ -53,7 +48,7 @@ function engine() {
 function reset() {
     allGuesses = 9;
     wrongGuess = [];
-    spaceLetter = [];
+    spaceOrLetter = [];
     Play()
 }
 
@@ -73,7 +68,7 @@ function checkLetters(letter) {
         //check each letter to see if it matches word
         for (var i = 0; i < space; i++) {
             if (randomcar[i] == letter) {
-                spaceLetter[i] = letter;
+                spaceOrLetter[i] = letter;
                 console.log(randomcar);
             }
         }
@@ -81,9 +76,9 @@ function checkLetters(letter) {
     //otherwise, push the incorrect guess in the wrong guesses section, and reduce remaining guesses
     else {
         wrongGuess.push(letter);
-        guessesRemaining--;
+        allGuesses--;
     }
-    console.log(spaceLetter);
+    console.log(spaceOrLetter);
 }
 
 
@@ -106,6 +101,34 @@ function alphaKey() {
 
 
 
+
+
+function complete() {
+    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + allGuesses)
+
+    //if WON...then alert, play audio, display image and reset new round
+    if (word.toString() == spaceOrLetter.toString()) {
+        wins++;
+        aud()
+        reset()
+        //display wins on screen
+        document.getElementById("winstracker").innerHTML = " " + wins;
+
+        //if LOST...then alert and reset new round
+    } else if (allGuesses === 0) {
+        losses++;
+        reset()
+        // document.getElementById("image").src = "./assets/images/try-again.png"
+        // document.getElementById("losstracker").innerHTML = " " + losses;
+    }
+    document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+    // document.getElementById("allGuesses").innerHTML = " " + allGuesses;
+    console.log(spaceOrLetter);
+}
+
+
+
+Play();
 // Listen for keyboard input and discriminate input
 document.onkeydown = function(event) {
     // console.log("Key pressed");
@@ -114,6 +137,7 @@ document.onkeydown = function(event) {
     if (userInput == userInput.replace(/[^a-z]/g)) {
         // console.log("Correct key " + userInput);
         alphaKey();
+        checkLetters(userInput);
         // if (userInput === word) {
             // console.log(word)
         // }
@@ -121,6 +145,7 @@ document.onkeydown = function(event) {
         var userInput = "Caps ON " + userInput;
         // console.log(userInput);
         alphaKey();
+        checkLetters(userInput);
     } else if (userInput == userInput.replace(/[^0-9]/g)) {
         var userInput = userInput + " is a Number";
         console.log(userInput);
@@ -138,43 +163,3 @@ document.onkeydown = function(event) {
 }
 
 
-function complete() {
-    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
-
-    //if WON...then alert, play audio, display image and reset new round
-    if (word.toString() == spaceLetter.toString()) {
-        wins++;
-        aud()
-        reset()
-        //display wins on screen
-        document.getElementById("winstracker").innerHTML = " " + wins;
-
-        //if LOST...then alert and reset new round
-    } else if (guessesRemaining === 0) {
-        losses++;
-        reset()
-        document.getElementById("image").src = "./assets/images/try-again.png"
-        document.getElementById("losstracker").innerHTML = " " + losses;
-    }
-    document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
-    document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
-    console.log(spaceLetter);
-}
-
-
-
-Play();
-
-
-document.onkeyup = function (event) {
-    var guesses = String.fromCharCode(event.keyCode).toLowerCase();
-    //check to see if guess entered matches value of random word
-    checkLetters(guesses);
-    //process wins/loss 
-    complete();
-    //store player guess in console for reference 
-    console.log(guesses);
-
-    //display/store incorrect letters on screen
-    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
-}
