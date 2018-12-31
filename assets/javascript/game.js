@@ -7,7 +7,8 @@ for (var i = 0; i < cars.length; i++) {
 var valid = "Keep going";
 var invalid = "Try again";
 
-var word = [];
+var wordCap = [];
+var wordLow = [];
 var randomcar = "";
 var space = 0;
 var spaceOrLetter = [];
@@ -20,10 +21,22 @@ var losses = 0;
 
 
 function Play() {
-randomcar = cars[Math.floor(Math.random()*cars.length)];
-word = (randomcar.split(''));
-space = word.length;
+// randomcar = cars[Math.floor(Math.random()*cars.length)];
+pickCar = cars[Math.floor(Math.random()*cars.length)];
+randomcar = pickCar.toLowerCase();
 
+randomcarLow = randomcar.toLowerCase();
+
+
+// console.log(rancar);
+// wordCap = (randomcar.split(''));
+wordLow = (randomcarLow.split(''));
+// space = wordCap.length;
+space = wordLow.length;
+
+console.log(randomcarLow);
+console.log(wordLow);
+console.log(space);
 // var word, space, i; 
 for (var i = 0; i < space; i++) {
     spaceOrLetter.push("_");
@@ -89,7 +102,8 @@ function checkLetters(letter) {
 document.onkeydown = function(eventKey) {
     var keyInput = eventKey.key.toString(); {
         console.log(keyInput); 
-        if (Array.word === keyInput) {
+        // if (Array.wordCap === keyInput) {
+        if (Array.wordLow === keyInput) {
             console.log("You pressed");
         }
     }
@@ -108,12 +122,14 @@ function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + allGuesses)
 
     //if WON...then alert, play audio, display image and reset new round
-    if (word.toString() == spaceOrLetter.toString()) {
+    // if (wordCap.toString() == spaceOrLetter.toString()) {
+    if (wordLow.toString() == spaceOrLetter.toString()) {
+            // if (wordCap.toString() == spaceOrLetter.toString().toLowerCase()) {
         wins++;
-        aud()
+        // aud()
         reset()
         //display wins on screen
-        document.getElementById("winstracker").innerHTML = " " + wins;
+        // document.getElementById("winstracker").innerHTML = " " + wins;
 
         //if LOST...then alert and reset new round
     } else if (allGuesses === 0) {
@@ -124,6 +140,10 @@ function complete() {
     }
     // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
     document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
+
+    // var lowercase = spaceOrLetter[i].toLowerCase();
+    // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + lowercase.join("</div><div class='letter'>") + "</div>";
+
     // document.getElementById("allGuesses").innerHTML = " " + allGuesses;
     console.log(spaceOrLetter);
 }
@@ -136,14 +156,14 @@ document.onkeydown = function(event) {
     // console.log("Key pressed");
     // var userInput = event.key.toString(); {
     var userInput = String.fromCharCode(event.keyCode).toLowerCase();{
-
+        
         // console.log(userInput);
     if (userInput == userInput.replace(/[^a-z]/g)) {
         // console.log("Correct key " + userInput);
         alphaKey();
         checkLetters(userInput);
-        // if (userInput === word) {
-            // console.log(word)
+        // if (userInput === wordCap) {
+            // console.log(wordCap)
         // }
     } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
         var userInput = "Caps ON " + userInput;
