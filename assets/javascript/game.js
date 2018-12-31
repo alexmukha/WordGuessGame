@@ -23,11 +23,12 @@ function Play() {
 randomcar = cars[Math.floor(Math.random()*cars.length)];
 word = (randomcar.split(''));
 space = word.length;
-var word, space, i;
 
+// var word, space, i; 
 for (var i = 0; i < space; i++) {
-    spaceOrLetter.push(" ");
-document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+    spaceOrLetter.push("_");
+document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
+// document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
 }
 
 var showImg = document.getElementById("object");
@@ -121,7 +122,8 @@ function complete() {
         // document.getElementById("image").src = "./assets/images/try-again.png"
         // document.getElementById("losstracker").innerHTML = " " + losses;
     }
-    document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+    // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+    document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
     // document.getElementById("allGuesses").innerHTML = " " + allGuesses;
     console.log(spaceOrLetter);
 }
@@ -132,8 +134,10 @@ Play();
 // Listen for keyboard input and discriminate input
 document.onkeydown = function(event) {
     // console.log("Key pressed");
-    var userInput = event.key.toString(); {
-    // console.log(userInput);
+    // var userInput = event.key.toString(); {
+    var userInput = String.fromCharCode(event.keyCode).toLowerCase();{
+
+        // console.log(userInput);
     if (userInput == userInput.replace(/[^a-z]/g)) {
         // console.log("Correct key " + userInput);
         alphaKey();
@@ -159,7 +163,7 @@ document.onkeydown = function(event) {
         // console.log("user says " + userInput);
     }
     }
-    
+    complete();
 }
 
 
