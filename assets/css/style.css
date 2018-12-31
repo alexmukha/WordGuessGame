@@ -61,6 +61,17 @@ padding: 0;
     font-size: 30px;
 }
 
+.blank {
+    display: inline-block;
+    /* background-color: white; */
+    /* border-bottom: 2px black solid; */
+    color: black;
+    margin: 10px;
+    width: 4px;
+    height: 40px;
+    /* font-weight: bold; */
+    /* font-size: 30px; */
+}
 .spacer {
     margin: auto;
 }
