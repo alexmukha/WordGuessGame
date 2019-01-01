@@ -20,7 +20,6 @@ var wins = 0;
 var losses = 0;
 
 
-
 function Play() {
 // randomcar = cars[Math.floor(Math.random()*cars.length)];
 pickCar = cars[Math.floor(Math.random()*cars.length)];
@@ -47,24 +46,17 @@ document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spac
 // var showImg = document.getElementById("object");
 // showImg.classList.add(pickCar);
 
-var showImg = document.getElementById("carImg").src = "./assets/images/" + pickCar + "-No.png";
-// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "'></div>";
+var showImg = document.getElementById("imageCar").src = "./assets/images/" + pickCar + "-No.png";
+// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "-No" + "' id='objectIn'></div>";
+// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "-No" + " fadeOut'></div>";
 
 }
-
-
-var a = document.getElementById("Ferrari");
-var b = document.getElementById("Tesla");
-
 
 function engine() {
     //Audio
     //---------------------------
-    if (pickCar === cars[0]) {
-        a.play();
-    }
- else if (pickCar === cars[1]) {
-        b.play();
+    if (randomcar === cars[0]) {
+        sond.play();
     }
 }
 
@@ -126,8 +118,6 @@ function alphaKey() {
 
 
 
-
-
 function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + allGuesses)
 
@@ -136,9 +126,13 @@ function complete() {
     if (wordLow.toString() == spaceOrLetter.toString()) {
             // if (wordCap.toString() == spaceOrLetter.toString().toLowerCase()) {
         wins++;
-        engine();
-        showImg = document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
+        showImg = document.getElementById("imageCar").src = "./assets/images/" + pickCar + ".png";
 
+        // aud()
+        // delay();
+        showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "-No" + " fadeOut' id='objectIn'></div>";
+        // delay();
+        showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "></div>";
         // reset()
         //display wins on screen
         // document.getElementById("winstracker").innerHTML = " " + wins;
@@ -146,7 +140,7 @@ function complete() {
         //if LOST...then alert and reset new round
     } else if (allGuesses === 0) {
         losses++;
-        reset()
+        // reset()
         // document.getElementById("image").src = "./assets/images/try-again.png"
         // document.getElementById("losstracker").innerHTML = " " + losses;
     }
