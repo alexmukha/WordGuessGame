@@ -95,57 +95,98 @@ padding: 0;
 }
 
 .Ferrari {
-    /* background-image: url("../../assets/images/YellowFerrari.png"); */
     content: url("../../assets/images/BlueFerrari.png");
 }
 
+.FerrariNo {
+    content: url("../../assets/images/BlueFerrari-No.png");
+}
+
 .Tesla {
-    /* background-image: url("../../assets/images/TeslaS.png"); */
     content: url("../../assets/images/TeslaS.png");
 }
 
+
+.TeslaNo {
+    content: url("../../assets/images/TeslaS-No.png");
+}
+
 .Jaguar {
-    /* background-image: url("../../assets/images/Jaguar.png"); */
     content: url("../../assets/images/Jaguar.png");
 }
 
+.JaguarNo {
+    content: url("../../assets/images/Jaguar-No.png");
+}
+
 .Lamborghini {
-    /* background-image: url("../../assets/images/Lamborghini.png"); */
     content: url("../../assets/images/Lamborghini.png");
 }
 
+.LamborghiniNo {
+    content: url("../../assets/images/Lamborghini-No.png");
+}
+
 .Lotus {
-    /* background-image: url("../../assets/images/BlackLotus.png"); */
     content: url("../../assets/images/BlackLotus.png");
 }
 
+.LotusNo {
+    content: url("../../assets/images/BlackLotus-No.png");
+}
+
 .Maserati {
-    /* background-image: url("../../assets/images/WhiteMaserati.png"); */
     content: url("../../assets/images/WhiteMaserati.png");
 }
 
+.MaseratiNo {
+    content: url("../../assets/images/WhiteMaserati-No.png");
+}
+
 .MercedesBenz {
-    /* background-image: url("../../assets/images/BlackMercedes.png"); */
     content: url("../../assets/images/BlackMercedes.png");
 }
 
+.MercedesBenzNo {
+    content: url("../../assets/images/BlackMercedes-No.png");
+}
+
 .Bentley {
-    /* background-image: url("../../assets/images/BlueBentley.png"); */
     content: url("../../assets/images/BlueBentley.png");
+}
+
+.BentleyNo {
+    content: url("../../assets/images/BlueBentley-No.png");
 }
 
 .Bugatti {
     content: url("../../assets/images/BlueBugatti.png");
 }
 
+.BugattiNo {
+    content: url("../../assets/images/BlueBugatti-No.png");
+}
+
 .Lexus {
     content: url("../../assets/images/GreyLexus.png");
+}
+
+.LexusNo {
+    content: url("../../assets/images/GreyLexus-No.png");
 }
 
 .Koenigsegg {
     content: url("../../assets/images/koenigsegg.png");
 }
 
+.KoenigseggNo {
+    content: url("../../assets/images/koenigsegg-No.png");
+}
+
 .McLaren {
     content: url("../../assets/images/McLaren.png");
+}
+
+.McLarenNo {
+    content: url("../../assets/images/McLaren-No.png");
 }
