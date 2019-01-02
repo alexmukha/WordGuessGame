@@ -22,14 +22,47 @@ padding: 0;
 }
 
 .container {
-    max-width: 750px;
-    min-height: 500px;
-    max-height: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     /* padding: 20px 0; */
     text-align: center;
     /* background-color: rgba(0, 0, 255, 0.3); */
+    /* position: initial; */
 
+}
+
+.big {
+    display: inline-block;
+    
+}
+
+.leftSide {
+    /* background-color: white; */
+    position: relative;
+    margin: 0;
+    padding: 0;
+ align-content: flex-start;   
+}
+
+.center {
+    max-width: 750px;
+    min-height: 500px;
+    max-height: 100%;
+    
+}
+
+.rightSide {
+    /* background-color: white; */
+    margin: 0;
+    padding: 0;
+    
+}
+
+.scoreboard {
+    width: 200px;
+    height: 200px;
+     background-color: rgba(0, 255, 0, 0.3);
+   
 }
 
 .title {
@@ -74,6 +107,7 @@ padding: 0;
 }
 .spacer {
     margin: auto;
+    border: 1px blue solid;
 }
 
 .imgBox {
@@ -94,147 +128,3 @@ padding: 0;
    
 }
 
-@-webkit-keyframes fadeOut {
-    00% {opacity: 1;}
-    100% {opacity: 0;}
-    }
-    
-    @keyframes fadeOut {
-        0% {opacity: 1;}
-        100% {opacity: 0;}
-    }
-    
-    .fadeOut {
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
-    }
-    
-
-@-webkit-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-    }
-    
-    @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-    }
-    
-    .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-    }
-
-
-
-.Ferrari {
-    transition: opacity 500ms ease-in;
-    content: url("../../assets/images/BlueFerrari.png");
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-        
-}
-
-
-.Ferrari-No {
-    content: url("../../assets/images/BlueFerrari-No.png");
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-        
-
-}
-
-.Tesla {
-    opacity: 1;
-    transition: opacity 10s ease-in;
-    content: url("../../assets/images/TeslaS.png");
-}
-
-
-.Tesla-No {
-    content: url("../../assets/images/TeslaS-No.png");
-}
-
-.Jaguar {
-    content: url("../../assets/images/Jaguar.png");
-}
-
-.Jaguar-No {
-    content: url("../../assets/images/Jaguar-No.png");
-}
-
-.Lamborghini {
-    content: url("../../assets/images/Lamborghini.png");
-}
-
-.Lamborghini-No {
-    content: url("../../assets/images/Lamborghini-No.png");
-}
-
-.Lotus {
-    content: url("../../assets/images/BlackLotus.png");
-}
-
-.Lotus-No {
-    content: url("../../assets/images/BlackLotus-No.png");
-}
-
-.Maserati {
-    content: url("../../assets/images/WhiteMaserati.png");
-}
-
-.Maserati-No {
-    content: url("../../assets/images/WhiteMaserati-No.png");
-}
-
-.MercedesBenz {
-    content: url("../../assets/images/BlackMercedes.png");
-}
-
-.MercedesBenz-No {
-    content: url("../../assets/images/BlackMercedes-No.png");
-}
-
-.Bentley {
-    content: url("../../assets/images/BlueBentley.png");
-}
-
-.Bentley-No {
-    content: url("../../assets/images/BlueBentley-No.png");
-}
-
-.Bugatti {
-    content: url("../../assets/images/BlueBugatti.png");
-}
-
-.Bugatti-No {
-    content: url("../../assets/images/BlueBugatti-No.png");
-}
-
-.Lexus {
-    content: url("../../assets/images/GreyLexus.png");
-}
-
-.Lexus-No {
-    content: url("../../assets/images/GreyLexus-No.png");
-}
-
-.Koenigsegg {
-    content: url("../../assets/images/koenigsegg.png");
-}
-
-.Koenigsegg-No {
-    content: url("../../assets/images/koenigsegg-No.png");
-}
-
-.McLaren {
-    content: url("../../assets/images/McLaren.png");
-}
-
-.McLaren-No {
-    content: url("../../assets/images/McLaren-No.png");
-}

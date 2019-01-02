@@ -2,7 +2,6 @@
 // var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
 var cars = ["Ferrari","Tesla"];
 for (var i = 0; i < cars.length; i++) {
-// var randomcar = Math.floor(Math.random()) + 1;
 }
 
 var valid = "Keep going";
@@ -22,7 +21,6 @@ var losses = 0;
 
 
 function Play() {
-// randomcar = cars[Math.floor(Math.random()*cars.length)];
 pickCar = cars[Math.floor(Math.random()*cars.length)];
 randomcar = pickCar.toLowerCase();
 
@@ -162,7 +160,7 @@ function complete() {
 
 
 
-Play();
+// Play();
 // Listen for keyboard input and discriminate input
 document.onkeydown = function(event) {
     // console.log("Key pressed");
