@@ -14,8 +14,36 @@
 <body><div class="body">
     <div class="container">
             <div class="leftSide big">
-                <div class="scoreboard">
-                        LEFT scoreboard
+                <div class="board">
+                        <div class="scoreBoard">
+                      <div class="topLine">
+  <u>WINS</u>
+                      </div>
+                      <div class="line1 scoresLeft">
+Line1:
+                      </div>
+                      <div class="line1 scoresRight">
+Line1:
+                      </div>
+                      <div class="line2 scoresLeft">
+Line2:
+                      </div>
+                      <div class="line2 scoresRight">
+Line2:
+                      </div>
+                      <div class="line3 scoresLeft">
+Line3:
+                      </div>
+                      <div class="line3 scoresRight">
+Line3:
+                      </div>
+                      <div class="line4 scoresLeft">
+Line4:
+                      </div>    
+                      <div class="line4 scoresRight">
+Line4:
+                      </div>    
+                </div>
                 </div>
 
     </div>
@@ -32,12 +60,15 @@
                <br>
                                            &nbsp;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         </div>
+
+
         <div class="main">
-        <div class="spacer">&nbsp;</div>
+       <div class="spacer">&nbsp;</div>
         <div class="imgBox" id="object">
-                <img id="carImg" src="./assets/images/road-sky.jpg" width="600" height="450" >
+                <img id="imgBox" src="./assets/images/road-sky.jpg" width="600" height="450" >
 
         </div>
+    
         <div class="spacer">&nbsp;
             <audio id="Ferrari">
                 <source src="./assets/audio/Ferrari.mp3" type="audio/mp3">
@@ -49,11 +80,51 @@
         </div>
         
         </div>
+
+    
     </div>
             <div class="rightSide big">
-                <div class="scoreboard">
-                    RIGTH scoreboard
+                <div class="board">
+                    <div class="scoreBoard">
+                
+                                      <div class="topLine">
+  <u>LOSSES</u>
+                      </div>
+                    <div class="scoresLeft">
+Attempts Left:
+                      <div class="lines1">
+
+                      </div>
+                      <div class="lines2">
+You have lost:
+                      </div>
+                      <div class="lines3">
+You have won:
+                      </div>
+                      <div class="lines4">
+Continue?
+                      </div>    
+                    </div>
+                    <div class="scoresRight">
+
+                      <div class="lines1" id="guesses">
+9
+                      </div>
+                      <div class="lines2" id="losses">
+1
+                      </div>
+                      <div class="lines3" id="wins">
+0
+                      </div>
+                      <form name="play" target="_selft">
+                      <div class="lines4" id="replay">
+&nbsp;
+                      </div>
+                        </form>
+                    </div>
+
                 </div>
+            </div>
 
     </div>
 

@@ -1,6 +1,6 @@
 
-// var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
-var cars = ["Ferrari","Tesla"];
+var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
+// var cars = ["Ferrari","Tesla","MercedesBenz"];
 for (var i = 0; i < cars.length; i++) {
 }
 
@@ -8,46 +8,82 @@ var valid = "Keep going";
 var invalid = "Try again";
 
 var wordCap = [];
-var wordLow = [];
+var word = [];
 var randomcar = "";
 var space = 0;
 var spaceOrLetter = [];
 var wrongGuess = [];
+var pickedCar = [];
 
 var allGuesses = 9;
 var wins = 0;
 var losses = 0;
-
+var carsPlayed = [];
 
 
 function Play() {
 pickCar = cars[Math.floor(Math.random()*cars.length)];
 randomcar = pickCar.toLowerCase();
 
-randomcarLow = randomcar.toLowerCase();
+for (var i = 0; i < carsPlayed; i++) {
+    if (pickCar === pickedCar[i]){
+        console.log("Match");
+    }
+    // console.log(">" + pickCar);
+    // console.log(">>" + pickedCar[i]);
 
+}
+
+
+pickedCar.push(pickCar);
+carsPlayed = pickedCar.length;
+
+    console.log(">" + pickCar);
+    console.log(">>" + pickedCar[i]);
+
+// randomcarLow = randomcar.toLowerCase();
+// 
 
 // console.log(rancar);
 // wordCap = (randomcar.split(''));
-wordLow = (randomcarLow.split(''));
+// word = (randomcarLow.split(''));
+word = (randomcar.split(''));
 // space = wordCap.length;
-space = wordLow.length;
-
-console.log(randomcarLow);
-console.log(wordLow);
+space = word.length;
+// if (carsPlayed == cars.length) {
+    // alert("No more cars");
+// }
+// console.log(randomcarLow);
+// console.log(word);
 // var word, space, i; 
 for (var i = 0; i < space; i++) {
-    spaceOrLetter.push("_");
+    spaceOrLetter.push("&nbsp;");
 document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
-// document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
+
 }
+
+
+// console.log(word.length);
+console.log(pickedCar);
+// console.log(word[i]);
+console.log(spaceOrLetter);
+
 
 // var showImg = document.getElementById("object");
 // showImg.classList.add(pickCar);
 
-var showImg = document.getElementById("carImg").src = "./assets/images/" + pickCar + "-No.png";
-// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "'></div>";
+// document.getElementById("carImg").src = "./assets/images/" + pickCar + "-No.png";
+document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
+// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"gone\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
 
+
+// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\" id=\"gone\"></div>";
+
+// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\"></div>";
+
+// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "'></div>";
+document.getElementById("losses").innerHTML = " " + losses;
+    
 }
 
 
@@ -82,7 +118,7 @@ function checkLetters(letter) {
     for (var i = 0; i < space; i++) {
         if (randomcar[i] == letter) {
             letterInWord = true;
-            console.log(randomcar);
+            // console.log(randomcar);
         }
     }
     //if letterInWord (false)
@@ -91,7 +127,7 @@ function checkLetters(letter) {
         for (var i = 0; i < space; i++) {
             if (randomcar[i] == letter) {
                 spaceOrLetter[i] = letter;
-                console.log(randomcar);
+                // console.log(randomcar);
             }
         }
     }
@@ -100,7 +136,7 @@ function checkLetters(letter) {
         wrongGuess.push(letter);
         allGuesses--;
     }
-    console.log(spaceOrLetter);
+    // console.log(spaceOrLetter);
 }
 
 
@@ -111,42 +147,48 @@ document.onkeydown = function(eventKey) {
     var keyInput = eventKey.key.toString(); {
         console.log(keyInput); 
         // if (Array.wordCap === keyInput) {
-        if (Array.wordLow === keyInput) {
-            console.log("You pressed");
+        if (Array.word === keyInput) {
+            // console.log("You pressed");
         }
     }
 }
 
 
 function alphaKey() {
-    console.log("RESULT ");
+    // console.log("RESULT ");
 }
 
 
+var fade = setInterval(fadeout, 4000);
 
 
 
 function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + allGuesses)
-
+    // console.log(pickedCar);
+    // console.log(carsPlayed);
     //if WON...then alert, play audio, display image and reset new round
     // if (wordCap.toString() == spaceOrLetter.toString()) {
-    if (wordLow.toString() == spaceOrLetter.toString()) {
+    if (word.toString() == spaceOrLetter.toString()) {
             // if (wordCap.toString() == spaceOrLetter.toString().toLowerCase()) {
         wins++;
-        engine();
-        showImg = document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
-
+        // engine();
+        // document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
+        document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"see\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
+        document.getElementById("replay").innerHTML = "<button onclick=\"reset()\"  tabindex=\"1\">NEXT</button>";
+        
         // reset()
+        
+        // replay()
         //display wins on screen
-        // document.getElementById("winstracker").innerHTML = " " + wins;
+        document.getElementById("wins").innerHTML = " " + wins;
 
         //if LOST...then alert and reset new round
     } else if (allGuesses === 0) {
         losses++;
         reset()
         // document.getElementById("image").src = "./assets/images/try-again.png"
-        // document.getElementById("losstracker").innerHTML = " " + losses;
+        document.getElementById("losses").innerHTML = " " + losses;
     }
     // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
     document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
@@ -154,8 +196,11 @@ function complete() {
     // var lowercase = spaceOrLetter[i].toLowerCase();
     // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + lowercase.join("</div><div class='letter'>") + "</div>";
 
-    // document.getElementById("allGuesses").innerHTML = " " + allGuesses;
-    console.log(spaceOrLetter);
+    document.getElementById("guesses").innerHTML = " " + allGuesses;
+    // console.log(spaceOrLetter);
+}
+function fadeout() {
+    document.getElementById("gone").classList.add("gone");
 }
 
 
@@ -182,10 +227,10 @@ document.onkeydown = function(event) {
         checkLetters(userInput);
     } else if (userInput == userInput.replace(/[^0-9]/g)) {
         var userInput = userInput + " is a Number";
-        console.log(userInput);
+        // console.log(userInput);
     } else  {
         var userInput = userInput + " is NOT a letter";
-        console.log(userInput);
+        // console.log(userInput);
     }
 
 
@@ -194,6 +239,7 @@ document.onkeydown = function(event) {
     }
     }
     complete();
+    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
 }
 
 reset();
