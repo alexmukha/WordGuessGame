@@ -15,12 +15,13 @@ var spaceOrLetter = [];
 var wrongGuess = [];
 var pickedCar = [];
 
-var allGuesses = 9;
+var allGuesses = 11;
 var wins = 0;
 var losses = 0;
 var carsPlayed = [];
 
-
+document.getElementById("guesses").innerHTML = " " + allGuesses;
+    
 function Play() {
 pickCar = cars[Math.floor(Math.random()*cars.length)];
 randomcar = pickCar.toLowerCase();
@@ -104,10 +105,12 @@ function engine() {
 
 
 function reset() {
-    allGuesses = 9;
+    allGuesses = 11;
     wrongGuess = [];
     spaceOrLetter = [];
     Play()
+    document.getElementById("guesses").innerHTML = " " + allGuesses;
+    
 }
 
 
@@ -135,6 +138,11 @@ function checkLetters(letter) {
     else {
         wrongGuess.push(letter);
         allGuesses--;
+        for (var i = 0; i < wrongGuess; i++) {
+            console.log("this is " + wrongGuess[i]);
+            document.getElementById("error").innerHTML = wrongGuess;
+        
+        }
     }
     // console.log(spaceOrLetter);
 }
@@ -159,7 +167,6 @@ function alphaKey() {
 }
 
 
-var fade = setInterval(fadeout, 4000);
 
 
 
@@ -176,7 +183,12 @@ function complete() {
         // document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
         document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"see\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
         document.getElementById("replay").innerHTML = "<button onclick=\"reset()\"  tabindex=\"1\">NEXT</button>";
-        
+        var fade = setInterval(fadeout, 4000);
+
+function fadeout() {
+    document.getElementById("gone").classList.add("gone");
+}
+
         // reset()
         
         // replay()
@@ -197,10 +209,8 @@ function complete() {
     // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + lowercase.join("</div><div class='letter'>") + "</div>";
 
     document.getElementById("guesses").innerHTML = " " + allGuesses;
+    
     // console.log(spaceOrLetter);
-}
-function fadeout() {
-    document.getElementById("gone").classList.add("gone");
 }
 
 
@@ -217,19 +227,24 @@ document.onkeydown = function(event) {
         // console.log("Correct key " + userInput);
         alphaKey();
         checkLetters(userInput);
+        document.getElementById("error").innerHTML = "";
         // if (userInput === wordCap) {
             // console.log(wordCap)
         // }
     } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
         var userInput = "Caps ON " + userInput;
+        document.getElementById("error").innerHTML = "Caps ON ";
+       
         // console.log(userInput);
         alphaKey();
         checkLetters(userInput);
     } else if (userInput == userInput.replace(/[^0-9]/g)) {
         var userInput = userInput + " is a Number";
+        document.getElementById("error").innerHTML = "You pressed a Number";
         // console.log(userInput);
     } else  {
         var userInput = userInput + " is NOT a letter";
+        document.getElementById("error").innerHTML = "This was NOT a letter";
         // console.log(userInput);
     }
 

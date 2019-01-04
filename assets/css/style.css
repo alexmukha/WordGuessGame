@@ -38,14 +38,14 @@ u {
     width: 20%;
     display: inline-block;
     min-height: 500px;
-        border: 1px rgb(237, 237, 253) solid;
+        /* border: 1px rgb(237, 237, 253) solid; */
 
     
 }
 
 .leftSide {
     display: inline-block;
-    border: 1px rgb(237, 237, 253) solid;
+    /* border: 1px rgb(237, 237, 253) solid; */
     /* background-color: white; */
     /* position: relative; */
     /* margin: 0; */
@@ -59,12 +59,13 @@ u {
 
 .center {
     display: inline-block;
-    border: 1px rgb(237, 237, 253) solid;
+    /* border: 1px rgb(237, 237, 253) solid; */
     width: 750px;
     /* min-height: 500px; */
     max-height: 100%;
     /* margin-top: 100px; */
     text-align: center;
+    position: initial;
 
 
     
@@ -72,11 +73,12 @@ u {
 
 .rightSide {
     display: inline-block;
-    border: 1px rgb(237, 237, 253) solid;
+    /* border: 1px rgb(237, 237, 253) solid; */
     /* background-color: white; */
     /* padding: 0; */
     /* width: 280px; */
-    margin: auto;
+    /* margin: auto; */
+    margin: 0 60px;
     text-align: center;
     
 }
@@ -130,7 +132,13 @@ u {
 
 .topLine {
     font-size: 25px;
-    padding: 10px;
+    padding: 10px 0 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bottomLine {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
 }
 
 .scoresLeft {
@@ -187,7 +195,7 @@ background-color: rgb(0, 100, 0);
 }
 
 #letterBoxes {
-    background-color: rgba(0, 100, 0, 0.5);
+    background-color: rgba(0, 100, 0, 1);
     color: white;
     border: 3px solid white;
     border-radius: 15px;
@@ -209,11 +217,11 @@ background-color: rgb(0, 100, 0);
     /* background-color: rgba(255, 255, 255, 0.05); */
     /* background-color: rgba(0, 100, 0, 1); */
     /* border-bottom: 2px rgb(255, 255, 255) solid; */
-    border: 1px rgb(0, 75, 0) solid;
+    border: 1px rgb(255, 255, 255) solid;
     /* color: black; */
     color: white;
     margin: 5px;
-    padding: 4px;
+    padding: 8px 2px 0 2px;
     width: 40px;
     height: 40px;
     text-transform: capitalize;
@@ -255,6 +263,19 @@ background-color: rgb(0, 100, 0);
 .spacer {
     margin: auto;
     /* border: 1px blue solid; */
+}
+
+.error {
+    width: 750px;
+    padding-top: 400px;
+    color:  rgba(0, 100, 0, 1);
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    z-index: 7;
 }
 
 .imgBox {
