@@ -179,6 +179,7 @@ function complete() {
     if (word.toString() == spaceOrLetter.toString()) {
             // if (wordCap.toString() == spaceOrLetter.toString().toLowerCase()) {
         wins++;
+        
         // engine();
         // document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
         document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"see\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
@@ -217,10 +218,10 @@ function fadeout() {
 
 // Play();
 // Listen for keyboard input and discriminate input
-document.onkeydown = function(event) {
+document.onkeypress = function(event) {
     // console.log("Key pressed");
     // var userInput = event.key.toString(); {
-    var userInput = String.fromCharCode(event.keyCode).toLowerCase();{
+    var userInput = String.fromCharCode(event.keyCode);{
         
         // console.log(userInput);
     if (userInput == userInput.replace(/[^a-z]/g)) {
@@ -232,19 +233,19 @@ document.onkeydown = function(event) {
             // console.log(wordCap)
         // }
     } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
-        var userInput = "Caps ON " + userInput;
-        document.getElementById("error").innerHTML = "Caps ON ";
+        var userAlert = "Caps ON - " + userInput;
+        document.getElementById("error").innerHTML = userAlert;
        
         // console.log(userInput);
         alphaKey();
         checkLetters(userInput);
     } else if (userInput == userInput.replace(/[^0-9]/g)) {
-        var userInput = userInput + " is a Number";
-        document.getElementById("error").innerHTML = "You pressed a Number";
+        var userAlert = userInput + " - is a Number";
+        document.getElementById("error").innerHTML = userAlert;
         // console.log(userInput);
     } else  {
-        var userInput = userInput + " is NOT a letter";
-        document.getElementById("error").innerHTML = "This was NOT a letter";
+        var userAlert = userInput + " - is NOT a letter";
+        document.getElementById("error").innerHTML = userAlert;
         // console.log(userInput);
     }
 

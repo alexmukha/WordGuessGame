@@ -39,7 +39,7 @@ function Guess() {
 }
 
 
-document.onkeypress = function(event) {
+document.onkeypress = function checkInput(event) {
     playing = true;
     var userInput = (event.key); 
         if (userInput == userInput.replace(/[^a-z]/g)) {
