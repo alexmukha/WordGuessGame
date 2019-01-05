@@ -40,7 +40,7 @@ function Play() {
     }
 
     // Placing image matching the word
-    document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
+    document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
 
     // Displaying losses
     document.getElementById("losses").innerHTML = " " + losses;
