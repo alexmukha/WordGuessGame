@@ -1,4 +1,3 @@
-
 var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
 // var cars = ["Ferrari","Tesla","MercedesBenz"];
 for (var i = 0; i < cars.length; i++) {
@@ -249,13 +248,3 @@ document.onkeypress = function(event) {
         // console.log(userInput);
     }
 
-
-    if (userInput === "a") {
-        // console.log("user says " + userInput);
-    }
-    }
-    complete();
-    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
-}
-
-reset();
