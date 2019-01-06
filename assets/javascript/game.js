@@ -1,126 +1,67 @@
-var cars = ["Ferrari","Tesla","Jaguar","Lamborghini","Lotus","Maserati","MercedesBenz","Bentley","Bugatti","Lexus","Koenigsegg","McLaren"];
-// var cars = ["Ferrari","Tesla","MercedesBenz"];
-for (var i = 0; i < cars.length; i++) {
-}
 
-var valid = "Keep going";
-var invalid = "Try again";
+var cars = ["Ferrari", "Tesla", "Jaguar", "Lamborghini", "Lotus", "Maserati", "MercedesBenz", "Bentley", "Bugatti", "Lexus", "Koenigsegg", "McLaren"];
+var carList = cars.slice(); // duplicate the array
 
-var wordCap = [];
+// Assign default values to some of the variables
 var word = [];
 var randomcar = "";
 var space = 0;
 var spaceOrLetter = [];
 var wrongGuess = [];
-var pickedCar = [];
-
 var allGuesses = 11;
 var wins = 0;
 var losses = 0;
-var carsPlayed = [];
+var engine = document.createElement("audio")
 
 document.getElementById("guesses").innerHTML = " " + allGuesses;
-    
+
+// activate the game
 function Play() {
-pickCar = cars[Math.floor(Math.random()*cars.length)];
-randomcar = pickCar.toLowerCase();
 
-for (var i = 0; i < carsPlayed; i++) {
-    if (pickCar === pickedCar[i]){
-        console.log("Match");
+    totalCars = carList.length; // Tracking number of cars left
+
+    // Stop game when array is empty
+    if (totalCars <= 0) {
+        pauseGame = true
+    } else {
+        pickCar = carList[Math.floor(Math.random() * carList.length)] // Picking a random car
+        carList.splice(carList.indexOf(pickCar), 1); // Removing picked car from array
+        randomcar = pickCar.toLowerCase(); // Car name to lower case
+
     }
-    // console.log(">" + pickCar);
-    // console.log(">>" + pickedCar[i]);
 
-}
+    word = (randomcar.split('')); // Breaking up the word into letter array
+    space = word.length; // Counting words in the word
 
-
-pickedCar.push(pickCar);
-carsPlayed = pickedCar.length;
-
-    console.log(">" + pickCar);
-    console.log(">>" + pickedCar[i]);
-
-// randomcarLow = randomcar.toLowerCase();
-// 
-
-// console.log(rancar);
-// wordCap = (randomcar.split(''));
-// word = (randomcarLow.split(''));
-word = (randomcar.split(''));
-// space = wordCap.length;
-space = word.length;
-// if (carsPlayed == cars.length) {
-    // alert("No more cars");
-// }
-// console.log(randomcarLow);
-// console.log(word);
-// var word, space, i; 
-for (var i = 0; i < space; i++) {
-    spaceOrLetter.push("&nbsp;");
-document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
-
-}
-
-
-// console.log(word.length);
-console.log(pickedCar);
-// console.log(word[i]);
-console.log(spaceOrLetter);
-
-
-// var showImg = document.getElementById("object");
-// showImg.classList.add(pickCar);
-
-// document.getElementById("carImg").src = "./assets/images/" + pickCar + "-No.png";
-document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
-// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"gone\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
-
-
-// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\" id=\"gone\"></div>";
-
-// document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\"></div>";
-
-// var showImg = document.getElementById("object").innerHTML = "<div class='" + pickCar + "'></div>";
-document.getElementById("losses").innerHTML = " " + losses;
-    
-}
-
-
-var a = document.getElementById("Ferrari");
-var b = document.getElementById("Tesla");
-
-
-function engine() {
-    //Audio
-    //---------------------------
-    if (pickCar === cars[0]) {
-        a.play();
+    // Creating a box for each letter of the word
+    for (var i = 0; i < space; i++) {
+        spaceOrLetter.push("&nbsp;");
+        document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
     }
- else if (pickCar === cars[1]) {
-        b.play();
-    }
+
+    // Placing image matching the word
+    document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
+
+    // Displaying losses
+    document.getElementById("losses").innerHTML = " " + losses;
+
 }
-
-
+// Reseting the game
 function reset() {
     allGuesses = 11;
     wrongGuess = [];
     spaceOrLetter = [];
     Play()
     document.getElementById("guesses").innerHTML = " " + allGuesses;
-    
+    engine.pause();
 }
-
-
-
+// Check letters
 function checkLetters(letter) {
     var letterInWord = false;
     //if the generated randomcar is equal to the letter entered... then variable is true
     for (var i = 0; i < space; i++) {
         if (randomcar[i] == letter) {
             letterInWord = true;
-            // console.log(randomcar);
         }
     }
     //if letterInWord (false)
@@ -129,7 +70,6 @@ function checkLetters(letter) {
         for (var i = 0; i < space; i++) {
             if (randomcar[i] == letter) {
                 spaceOrLetter[i] = letter;
-                // console.log(randomcar);
             }
         }
     }
@@ -138,60 +78,28 @@ function checkLetters(letter) {
         wrongGuess.push(letter);
         allGuesses--;
         for (var i = 0; i < wrongGuess; i++) {
-            console.log("this is " + wrongGuess[i]);
             document.getElementById("error").innerHTML = wrongGuess;
-        
-        }
-    }
-    // console.log(spaceOrLetter);
-}
 
-
-// console.log(letNums);
-
-
-document.onkeydown = function(eventKey) {
-    var keyInput = eventKey.key.toString(); {
-        console.log(keyInput); 
-        // if (Array.wordCap === keyInput) {
-        if (Array.word === keyInput) {
-            // console.log("You pressed");
         }
     }
 }
-
-
-function alphaKey() {
-    // console.log("RESULT ");
-}
-
-
-
-
 
 function complete() {
-    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + allGuesses)
-    // console.log(pickedCar);
-    // console.log(carsPlayed);
-    //if WON...then alert, play audio, display image and reset new round
-    // if (wordCap.toString() == spaceOrLetter.toString()) {
+
     if (word.toString() == spaceOrLetter.toString()) {
-            // if (wordCap.toString() == spaceOrLetter.toString().toLowerCase()) {
-        wins++;
-        
-        // engine();
-        // document.getElementById("carImg").src = "./assets/images/" + pickCar + ".png";
+        wins++; // Add 1 to wining number
+        engine.setAttribute("src", "assets/audio/" + pickCar + ".mp3") // Match the sound to the name of the car
+        engine.play() // Play engine sound
+        // Display images of the random car
         document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"see\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
+        // Add continiue button
         document.getElementById("replay").innerHTML = "<button onclick=\"reset()\"  tabindex=\"1\">NEXT</button>";
-        var fade = setInterval(fadeout, 4000);
 
-function fadeout() {
-    document.getElementById("gone").classList.add("gone");
-}
+        var fade = setInterval(fadeout, 4000); // timeout for removing black image
 
-        // reset()
-        
-        // replay()
+        function fadeout() {
+            document.getElementById("gone").classList.add("gone"); // Hiding black image
+        }
         //display wins on screen
         document.getElementById("wins").innerHTML = " " + wins;
 
@@ -199,52 +107,34 @@ function fadeout() {
     } else if (allGuesses === 0) {
         losses++;
         reset()
-        // document.getElementById("image").src = "./assets/images/try-again.png"
         document.getElementById("losses").innerHTML = " " + losses;
     }
-    // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='blank'></div><div class='letter'>") + "</div>";
     document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
 
-    // var lowercase = spaceOrLetter[i].toLowerCase();
-    // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + lowercase.join("</div><div class='letter'>") + "</div>";
-
     document.getElementById("guesses").innerHTML = " " + allGuesses;
-    
-    // console.log(spaceOrLetter);
 }
 
-
-
-// Play();
 // Listen for keyboard input and discriminate input
-document.onkeypress = function(event) {
-    // console.log("Key pressed");
-    // var userInput = event.key.toString(); {
-    var userInput = String.fromCharCode(event.keyCode);{
-        
-        // console.log(userInput);
-    if (userInput == userInput.replace(/[^a-z]/g)) {
-        // console.log("Correct key " + userInput);
-        alphaKey();
-        checkLetters(userInput);
-        document.getElementById("error").innerHTML = "";
-        // if (userInput === wordCap) {
-            // console.log(wordCap)
-        // }
-    } else if (userInput == userInput.replace(/[^A-Z]/g)) { 
-        var userAlert = "Caps ON - " + userInput;
-        document.getElementById("error").innerHTML = userAlert;
-       
-        // console.log(userInput);
-        alphaKey();
-        checkLetters(userInput);
-    } else if (userInput == userInput.replace(/[^0-9]/g)) {
-        var userAlert = userInput + " - is a Number";
-        document.getElementById("error").innerHTML = userAlert;
-        // console.log(userInput);
-    } else  {
-        var userAlert = userInput + " - is NOT a letter";
-        document.getElementById("error").innerHTML = userAlert;
-        // console.log(userInput);
-    }
+document.onkeypress = function (event) {
+    var userInput = String.fromCharCode(event.keyCode); {
 
+        if (userInput == userInput.replace(/[^a-z]/g)) {
+            checkLetters(userInput);
+            document.getElementById("error").innerHTML = "";
+        } else if (userInput == userInput.replace(/[^A-Z]/g)) {
+            var userAlert = "Caps ON - " + userInput;
+            document.getElementById("error").innerHTML = userAlert;
+            checkLetters(userInput);
+        } else if (userInput == userInput.replace(/[^0-9]/g)) {
+            var userAlert = userInput + " - is a Number";
+            document.getElementById("error").innerHTML = userAlert;
+        } else {
+            var userAlert = userInput + " - is NOT a letter";
+            document.getElementById("error").innerHTML = userAlert;
+        }
+    }
+    complete();
+    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
+}
+
+reset();
