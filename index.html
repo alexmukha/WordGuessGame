@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Word Guessing Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
@@ -12,6 +12,7 @@
 <body>
   <div class="body">
     <div class="container">
+      
       <div class="leftSide">
         <div class="board">
           <div class="scoreBoard">
@@ -26,7 +27,7 @@
                 You have lost:
               </div>
               <div class="lines3">
-                You have won:
+                You have won:<br>
               </div>
             </div>
             <div class="scoresRight">
@@ -51,7 +52,9 @@
           </div>
         </div>
       </div>
+      
       <div class="center">
+          <div class="lfiller"></div>
         <div class="title">
           Do you know what car is it?
         </div>
@@ -62,7 +65,9 @@
           </div>
           <div class="error" id="error"></div>
         </div>
+       
       </div>
+     
       <div class="rightSide">
         <div class="board">
           <div class="scoreBoard">
@@ -95,6 +100,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
   <script src="assets/javascript/game.js"></script>

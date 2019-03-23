@@ -35,12 +35,14 @@ function Play() {
 
     // Creating a box for each letter of the word
     for (var i = 0; i < space; i++) {
-        spaceOrLetter.push("&nbsp;");
+        // spaceOrLetter.push("&nbsp;");
+        spaceOrLetter.push("<input type='text' class='lspace'/>");
+        // document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
         document.getElementById("letterBoxes").innerHTML = "<div class='letter'>" + spaceOrLetter.join("</div><div class='letter'>") + "</div>";
     }
 
     // Placing image matching the word
-    document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/spacer.png\" height=\"450px\" width=\"600px\"></div><div class=\"imgBox2\"><img src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div>";
+    document.getElementById("carImgBox").innerHTML = "<div class='imgBox1'><img id='gone' src='./assets/images/spacer.png' height='450px' width='600px'></div><div class='imgBox2'><img src='./assets/images/" + pickCar + "-No.png' height='450px' width='617px'></div>";
 
     // Displaying losses
     document.getElementById("losses").innerHTML = " " + losses;
@@ -91,9 +93,9 @@ function complete() {
         engine.setAttribute("src", "assets/audio/" + pickCar + ".mp3") // Match the sound to the name of the car
         engine.play() // Play engine sound
         // Display images of the random car
-        document.getElementById("carImgBox").innerHTML = "<div class=\"imgBox1\"><img id=\"gone\" src=\"./assets/images/" + pickCar + "-No.png\" height=\"450px\" width=\"617px\"></div><div class=\"imgBox2\"><img id=\"see\" src=\"./assets/images/" + pickCar + ".png\" height=\"450px\" width=\"600px\"></div>";
+        document.getElementById("carImgBox").innerHTML = "<div class='imgBox1'><img id='gone' src='./assets/images/" + pickCar + "-No.png' height='450px' width='617px'></div><div class='imgBox2'><img id='see' src='./assets/images/" + pickCar + ".png' height='450px' width='600px'></div>";
         // Add continiue button
-        document.getElementById("replay").innerHTML = "<button onclick=\"reset()\"  tabindex=\"1\">NEXT</button>";
+        document.getElementById("replay").innerHTML = "<button onclick='reset()'  tabindex='1'>NEXT</button>";
 
         var fade = setInterval(fadeout, 4000); // timeout for removing black image
 
